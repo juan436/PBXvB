@@ -19,7 +19,7 @@ services:
       - DB_PASS=asterisk
       - DBENGINE=mysql
       - DBNAME=asterisk
-      - DBHOST=172.18.0.2
+      - DBHOST=freepbx_mariadb
       - DBPORT=3306
       - CDRDBNAME=asteriskcdrdb
       - DBUSER=asterisk
@@ -61,6 +61,9 @@ services:
     environment:
       - TZ=America/Puerto_Rico
       - MYSQL_ROOT_PASSWORD=asterisk
+      - MYSQL_DATABASE=asterisk
+      - MYSQL_USER=asterisk
+      - MYSQL_PASSWORD=asterisk
     networks:
       asterisk:
         ipv4_address: 172.18.0.2
