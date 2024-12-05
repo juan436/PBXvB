@@ -16,7 +16,7 @@ services:
     environment:
       - TZ=America/Puerto_Rico
       - DB_USER=asterisk
-      - DB_PASS=asteriskpass
+      - DB_PASS=asterisk
       - DBENGINE=mysql
       - DBNAME=asterisk
       - DBHOST=172.18.0.2
