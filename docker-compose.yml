@@ -44,7 +44,7 @@ services:
       - etcvol:/etc/asterisk
       - usrvol:/usr/lib64/asterisk
       - logvol:/var/log/asterisk
-    restart: always
+    restart: unless-stopped
     networks:
       asterisk:
         ipv4_address: 172.18.0.3
@@ -54,7 +54,7 @@ services:
   mariadb:
     container_name: freepbx_mariadb
     image: mariadb:latest
-    restart: always
+    restart: unless-stopped
     volumes:
       - ./datadb:/var/lib/mysql
       - ./sql:/docker-entrypoint-initdb.d
