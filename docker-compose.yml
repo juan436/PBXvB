@@ -37,8 +37,10 @@ services:
       - AMPSBIN=/usr/sbin
       - AMPCGIBIN=/var/www/cgi-bin
       - AMPPLAYBACK=/var/lib/asterisk/playback
+      - SSL_CERT_FILE=/etc/apache2/certs/server.crt
+      - SSL_CERT_KEY_FILE=/etc/apache2/certs/server.key
     volumes:
-      - ./certs:/etc/apache2/certs
+      - ./certs:/etc/apache2/certs:ro
       - wwwvol:/var/www/html
       - varvol:/var/lib/asterisk
       - etcvol:/etc/asterisk
@@ -74,7 +76,6 @@ volumes:
   usrvol:
   wwwvol:
   logvol:
-
 
 networks:
   asterisk:
